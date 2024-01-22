@@ -1,0 +1,88 @@
+/* Flexbox nos permite darle flexibilidad a nuestros elementos */
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial';
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    min-height: 600px;
+    margin: 80px auto;
+    border: 3px solid #000;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 100px; 
+    display: flex;  /* Con esto el contenedor se convierte en un flex container y los que esta dentro son flex items */
+    /* row | row-reverse | column | column-reverse */
+    flex-direction: row;
+    /*flex-wrap: wrap; */
+    /* nowrap | nowrap | wrap-reverse */
+    /*flex-wrap: wrap reverse;*/
+
+    /* con esto cambiamos la alineación de los flex-items en el main axis */
+    /* flex-start | flex-end | center | space-between |  space-around | space-evenly
+    space-between: los elementos se distribuyen equitativamente por el main-axis, el primer elemento se pega al inicio del eje y el ultimo se pega al final
+    space-around: todos los elementos se distribuyen equitativamente en ambos lados, el espacio entre elementos es mayor al de las esquinas, ya que se suma el espacio de cada elemento y por eso se ve un espacio mayor entre elementos que entre las esquinas
+     space-evenly: espacio equitativo en todos lados, el espacio es igual entre elementos y entre esquinas
+    */
+    justify-content: flex-start;
+    /* propiedades para cambiar la alineación de los elementos teniendo encuenta cross axis 
+    tenemos dos propiedades: align-items y align-content 
+    flex-start | flex-end | center  | stretch: el espacio entre cada linea nueva es el mismo | baseline 
+    align-items: stretch;
+    */
+
+    /* align-content: este se aplica cuando se ha hecho un desbordamiento de elementos 
+     flex-start | flex-end | center | space-between | space-around | space-evenly */
+    /*align-content: space-around;*/
+}
+/* 
+en flexbox tenemos dos ejes el main axis(eje principal) y el cross axis(eje secundario)
+main axis = por defecto va de izquierda a derecha
+cross axis = va de arriba hacia abajo
+el eje principal y secundario dependen de la dirección del flex, la cual por defecto es row
+flex-wrap: nos permiten definir que pasa si los elementos no caben en el eje principal
+*/
+
+.element {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    line-height: 100px;
+    width: 300px;
+    height: 100px;
+
+    /* propieades para los flex-items */
+    /* order: define el orden del elemento en el main axis */
+   /* flex-grow: 1;  define el factor de crecimiento de todos los elementos, teniendo en cuenta el espacio disponible sobrante del eje */
+   /*flex-shrink  : 1; La propiedad CSS flex-shrink especifica el factor de contracción de un flex item. 
+   Los flex items se encogerán para llenar el contenedor de acuerdo a su número flex-shrink , 
+   cuando el tamaño por defecto de los flex items sea mayor al de su contenedor flex container.*/
+    /*flex-basis : 150px; determina el tamaño de los elementos en el eje principal */
+    /*flex-basis : 200px; */
+}
+
+.element1 {
+    background-color: crimson;
+    /*
+    sirve para alinear solo un item-flex en particular
+    flex-start | flex-end | center |  
+    */
+    align-self: center;
+}
+
+.element2 {
+    background-color: purple;
+    /*flex-grow: 2; */
+    /*flex-shrink: 3; */
+}
+
+.element3 {
+    background-color: steelblue;
+}
