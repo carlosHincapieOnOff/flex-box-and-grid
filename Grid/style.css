@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial';
+}
+
+.container {
+    width: 90%;
+    height: 600px;
+    outline: 2px solid;
+    margin: 40px auto;
+    display: grid; /* con esto lo convertimos en un grid container */
+
+    grid-template-columns: 30% 50px 100px;
+    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: 1fr 2fr 1fr; /* toma el espacio disponible y hace la cuenta de las columnas en fracciones */
+    grid-template-columns: repeat(5, 1fr); /* con esto no sobrara nada de espacio */
+    /* las filas se crean automaticamente */
+    /* auto: con el espacio sobrante se crean filas automaticamente 
+    grid-auto-rows: auto;
+    */
+
+    /* con esto creamos las filas */
+    /*grid-template-rows: 100px 200px 20%;
+    grid-template-rows: repeat(10, 10%);
+    grid-template-rows: repeat(5, 1fr);*/
+
+    row-gap: 10px; /* permite crear espaciados entre filas */
+    column-gap: 10px; /* permite crear espaciados entre columnas */
+
+    gap: 20px; /* crea espaciados entre columnas y filas */
+    /*gap: 20px 5px; /* primer valor filas, segundo valor columnas */
+
+    /* con esto estoy nombrando areas escojiendo las filas y columnas, deben de ser cuadrados o rectangulos*/
+    /*grid-template-areas:
+    "element1 element1 element1 element2 element2"
+    "element1 element1 element1 element2 element2"
+    "element3 element3 element3 element2 element2"
+    "element3 element3 element3 element2 element2"
+    "element4 element4 element4 element4 element4";*/
+
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); /* crea columnas automaticamente, con un minimo de 250px y un maximo de una fracción */
+}
+
+.item {
+    /* si los elementos no tienen un alto y ancho definido en css grid se van a estirar */
+    /*width: 100px;
+    height: 100px;*/
+    color: #fff;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item1 {
+    background-color: slateblue;   
+    /*grid-column: 1 / 4; /* con esto le decimos en que linea de las columnas va a comenzar y en cual va terminar */
+    /*grid-row: 1 / 3;/* con esto le decimos en que linea de las filas va a comenzar y en cual va terminar */
+    /*grid-area: element1; /* teniendo en cuenta las areas definidas en el contenedor padre, le decimos que area ocupara */
+}
+
+.item2 {
+    background-color: deeppink;   
+    /*grid-area: element2;
+    /*grid-column: 4 / 6;
+    grid-row: 1 / 5;*/
+}
+
+.item3 {
+    background-color: seagreen;   
+    /*grid-column: 1 / 4;
+    grid-row: 3 / 5;*/
+    /*grid-area: element3;*/
+}
+
+.item4 {
+    background-color: brown;   
+    /*grid-column: 1 / -1; /* con el -1, le estamos diciendo que va hasta lo ultimo */
+    /*grid-row: 5 / -1;*/
+    /*grid-area: element4; */
+}
+
+.item5 {
+    background-color: cornflowerblue;   
+}
+
+.item6 {
+    background-color: rebeccapurple;   
+}
+
+/*
+@media(min-width:700px){
+    .container {
+        grid-template-areas:
+        "element1 element1 element1 element2 element2"
+        "element1 element1 element1 element2 element2"
+        "element3 element3 element3 element2 element2"
+        "element3 element3 element3 element2 element2"
+        "element4 element4 element4 element4 ."; /* con el punto le decimos que la ultima area este vacia 
+    }
+}
+*/
